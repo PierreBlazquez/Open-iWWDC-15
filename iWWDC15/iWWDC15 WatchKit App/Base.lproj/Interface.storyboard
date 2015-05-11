@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="psc-h9-gr3">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Countdown-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="Countdown" id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <timer width="1" height="1" alignment="left" textAlignment="center" format="abbreviated" id="AEU-oG-eSn">
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
+                            <calendarUnit key="units" day="YES" hour="YES" minute="YES" second="YES"/>
+                        </timer>
+                    </items>
+                    <connections>
+                        <outlet property="timer" destination="AEU-oG-eSn" id="zOZ-7t-7BT"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="454" y="370"/>
+        </scene>
+        <!--Modal-->
+        <scene sceneID="cWg-9K-iK7">
+            <objects>
+                <controller identifier="Modal" id="rW6-7f-bNT" customClass="ModalInterfaceController">
+                    <items>
+                        <label alignment="left" text="iWWDC for Apple Watch Open Source Edition, (c) Pierre BLAZQUEZ" textAlignment="center" numberOfLines="0" id="OIm-eH-RWf"/>
+                        <separator alignment="left" id="Py5-kt-baY"/>
+                        <label alignment="left" text="Logo is (c) Apple, Inc." textAlignment="center" numberOfLines="0" id="FFI-5l-LDU"/>
+                    </items>
+                    <connections>
+                        <outlet property="lblCreditsFirstPart" destination="OIm-eH-RWf" id="1dJ-B5-QIp"/>
+                        <outlet property="lblCreditsLastPart" destination="FFI-5l-LDU" id="adK-tg-DMU"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="689" y="370"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="Yhi-bf-HLx">
+            <objects>
+                <controller identifier="Main" id="psc-h9-gr3" customClass="MainInterfaceController">
+                    <items>
+                        <label alignment="left" text="Has it started?" id="WhJ-gB-EmE"/>
+                        <label width="1" height="1" alignment="left" text="..." textAlignment="center" id="3sn-gj-cLa">
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="45"/>
+                        </label>
+                    </items>
+                    <menu key="menu" id="VEi-vE-vG9">
+                        <items>
+                            <menuItem title="About" icon="info" id="2sx-zj-BVX">
+                                <connections>
+                                    <action selector="openModalController" destination="psc-h9-gr3" id="JV2-gf-ccR"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="lblHazItStarted" destination="WhJ-gB-EmE" id="zyU-ry-CVG"/>
+                        <outlet property="lblYesNo" destination="3sn-gj-cLa" id="NMJ-01-azm"/>
+                        <segue destination="AgC-eL-Hgc" kind="relationship" relationship="nextPage" id="YEh-tn-CG3"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="370"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController spacing="0.0" topTemplateType="body1Medium" id="0uZ-2p-rRc" customClass="GlanceController">
+                    <items>
+                        <label alignment="left" text="iWWDC" id="Yl4-8m-n8C"/>
+                        <label alignment="left" text="Countdown" id="ctw-Rc-bpt"/>
+                        <group alignment="left" id="uCw-4Q-Ouw">
+                            <items>
+                                <timer width="1" height="1" alignment="left" textAlignment="center" format="abbreviated" id="wVs-ez-SHH">
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
+                                    <calendarUnit key="units" day="YES" hour="YES" minute="YES" second="YES"/>
+                                </timer>
+                            </items>
+                        </group>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="timer" destination="wVs-ez-SHH" id="zR7-sS-bM1"/>
+                    </connections>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="235" y="672"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="235" y="1001"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller id="gdX-wl-uQE" customClass="NotificationController"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="1001"/>
+        </scene>
+    </scenes>
+</document>

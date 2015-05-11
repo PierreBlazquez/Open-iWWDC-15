@@ -1,0 +1,22 @@
+//
+//  PrefixHeader.pch
+//  iWWDC15
+//
+//  Created by Pierre BLAZQUEZ on 10/05/2015.
+//  Copyright (c) 2015 Pierre BLAZQUEZ. All rights reserved.
+//
+
+#ifndef iWWDC15_PrefixHeader_pch
+#define iWWDC15_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define kHelpHasBeenOpenedOnce @"HelpHasBeenOpenedOnce"
+#define kDidPostLocalNotifications @"DidPostLocalNotifications"
+#define kWWDCDate @"2015-6-8 10:00:00 -0800"
+#define kWWDCDateFormat @"yyyy-L-d HH:mm:ss Z"
+#define kWWDCURL @"https://developer.apple.com/wwdc/"
+#define kNotificationsEnabled @"UserEnabledNotificationsBitch"
+
+#endif
