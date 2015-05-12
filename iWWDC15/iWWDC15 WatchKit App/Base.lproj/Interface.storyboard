@@ -20,7 +20,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="454" y="370"/>
+            <point key="canvasLocation" x="496" y="409"/>
         </scene>
         <!--Modal-->
         <scene sceneID="cWg-9K-iK7">
@@ -46,7 +46,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="689" y="370"/>
+            <point key="canvasLocation" x="727" y="409"/>
         </scene>
         <!--Main-->
         <scene sceneID="Yhi-bf-HLx">
@@ -57,7 +57,6 @@
                         <label width="0.80000000000000004" height="0.80000000000000004" alignment="center" verticalAlignment="center" text="..." textAlignment="center" id="3sn-gj-cLa">
                             <fontDescription key="font" type="system" weight="semibold" pointSize="45"/>
                         </label>
-                        <imageView width="136" height="119" alignment="left" image="wwdc15.png" id="OCk-Gj-380"/>
                     </items>
                     <menu key="menu" id="VEi-vE-vG9">
                         <items>
