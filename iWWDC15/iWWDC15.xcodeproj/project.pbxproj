@@ -384,19 +384,19 @@
 				TargetAttributes = {
 					8F33101A1AFFBAA40049B320 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = L97C7GQ84Y;
+						DevelopmentTeam = 3V8KXS5ZB4;
 					};
 					8F3310341AFFBE450049B320 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = L97C7GQ84Y;
+						DevelopmentTeam = 3V8KXS5ZB4;
 					};
 					8F3310461AFFBE450049B320 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = L97C7GQ84Y;
+						DevelopmentTeam = 3V8KXS5ZB4;
 					};
 					8FA888D31AFCFBB7006E856F = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = L97C7GQ84Y;
+						DevelopmentTeam = 3V8KXS5ZB4;
 					};
 				};
 			};

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="psc-h9-gr3">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="psc-h9-gr3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
@@ -10,7 +10,7 @@
             <objects>
                 <controller identifier="Countdown" id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <timer width="1" height="1" alignment="left" textAlignment="center" format="abbreviated" id="AEU-oG-eSn">
+                        <timer width="1" height="1" alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="2" format="abbreviated" id="AEU-oG-eSn">
                             <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
                             <calendarUnit key="units" day="YES" hour="YES" minute="YES" second="YES"/>
                         </timer>
@@ -20,13 +20,22 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="454" y="370"/>
+            <point key="canvasLocation" x="496" y="409"/>
         </scene>
         <!--Modal-->
         <scene sceneID="cWg-9K-iK7">
             <objects>
                 <controller identifier="Modal" id="rW6-7f-bNT" customClass="ModalInterfaceController">
                     <items>
+                        <separator alignment="left" id="8cm-uy-NPq">
+                            <color key="color" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </separator>
+                        <separator alignment="left" id="HkD-ut-c4t">
+                            <color key="color" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </separator>
+                        <separator alignment="left" id="3kk-IO-tiA">
+                            <color key="color" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </separator>
                         <label alignment="left" text="iWWDC for Apple Watch Open Source Edition, (c) Pierre BLAZQUEZ" textAlignment="center" numberOfLines="0" id="OIm-eH-RWf"/>
                         <separator alignment="left" id="Py5-kt-baY"/>
                         <label alignment="left" text="Logo is (c) Apple, Inc." textAlignment="center" numberOfLines="0" id="FFI-5l-LDU"/>
@@ -37,15 +46,15 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="689" y="370"/>
+            <point key="canvasLocation" x="727" y="409"/>
         </scene>
         <!--Main-->
         <scene sceneID="Yhi-bf-HLx">
             <objects>
                 <controller identifier="Main" id="psc-h9-gr3" customClass="MainInterfaceController">
                     <items>
-                        <label alignment="left" text="Has it started?" id="WhJ-gB-EmE"/>
-                        <label width="1" height="1" alignment="left" text="..." textAlignment="center" id="3sn-gj-cLa">
+                        <label alignment="center" text="Has it started?" id="WhJ-gB-EmE"/>
+                        <label width="0.80000000000000004" height="0.80000000000000004" alignment="center" verticalAlignment="center" text="..." textAlignment="center" id="3sn-gj-cLa">
                             <fontDescription key="font" type="system" weight="semibold" pointSize="45"/>
                         </label>
                     </items>
@@ -65,7 +74,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="235" y="370"/>
+            <point key="canvasLocation" x="235" y="409.25"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
