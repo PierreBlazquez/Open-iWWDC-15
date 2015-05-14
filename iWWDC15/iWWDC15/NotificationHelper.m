@@ -19,7 +19,7 @@
 }
 
 + (NSArray *)getTexts {
-    return @[@"WWDC15 kicks off TODAY!", @"WWDC15 kicks off in an hour!", @"WWDC15 kicks off in half an hour!", @"WWDC15 kicks off in 10 mins!", @"Brace yourself, WWDC15 starts in 5 minutes!", @"WWDC15 starts... NOW!"];
+    return @[@"WWDC15 kicks off in 10 hours!", @"WWDC15 kicks off in an hour!", @"WWDC15 kicks off in half an hour!", @"WWDC15 kicks off in 10 mins!", @"Brace yourself, WWDC15 starts in 5 minutes!", @"WWDC15 starts... NOW!"];
 }
 
 @end

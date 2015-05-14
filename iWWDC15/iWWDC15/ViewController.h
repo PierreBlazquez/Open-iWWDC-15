@@ -16,6 +16,7 @@
 @interface ViewController : UIViewController {
     NSTimer *myMagicTimer;
     NSTimeInterval duration;
+    BOOL areWeInABugFixingContext;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *lblWWDC;

@@ -36,19 +36,49 @@
     
     /* This is for debugging purposes ONLY */
     [self _internal_doOurDebugStuff];
+    
+    /* FIX for malfunctionning gesture recognizers (we do it by code now) */
+    [self setMyTapRecognizers];
+    
+    /* FIX for local notification bug */
+    [self fixNotifications];
 }
 
 - (void)_internal_doOurDebugStuff {
     /* Not documented. */
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(_internal_tap_1)];
     [tap setNumberOfTapsRequired:1];
-    [tap setNumberOfTouchesRequired:2];
+    [tap setNumberOfTouchesRequired:3];
     [self.view addGestureRecognizer:tap];
 }
 
 - (void)_internal_tap_1 {
     [LocalNotificationHelper _internal_displayNotifications];
     //[LocalNotificationHelper _internal_cancelAllNotifications];
+}
+
+- (void)setMyTapRecognizers {
+    UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapedOnce)];
+    UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapedTwice)];
+    [tap1 setNumberOfTapsRequired:1];
+    [tap1 setNumberOfTouchesRequired:1];
+    [tap2 setNumberOfTapsRequired:1];
+    [tap2 setNumberOfTouchesRequired:2];
+    [self.view addGestureRecognizer:tap1];
+    [self.view addGestureRecognizer:tap2];
+    
+}
+
+
+- (void)fixNotifications {
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:kAreLocalNotificationsFixed]) {
+        NSLog(@"%s: OK, my bad, I'm fixing my mistakes right now.", __PRETTY_FUNCTION__);
+        areWeInABugFixingContext = YES;
+        [LocalNotificationHelper cancelAllNotifications];
+        [self doTheLocalNotificationDance];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kAreLocalNotificationsFixed];
+        areWeInABugFixingContext = NO;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -61,6 +91,8 @@
 
 - (void)doTheLocalNotificationDance {
     NSLog(@"%s: It's time to DANCE!", __PRETTY_FUNCTION__);
+    
+    [LocalNotificationHelper cancelAllNotifications];
     
     NSArray *dates = [NotificationHelper getDates];
     NSArray *texts = [NotificationHelper getTexts];
@@ -75,7 +107,16 @@
     dates = nil;
     texts = nil;
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hey" message:@"We have successfuly registered our notifications. See GitHub for more info." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *alert;
+    
+    if (areWeInABugFixingContext) {
+        alert = [[UIAlertView alloc] initWithTitle:@"Hey" message:@"We have successfuly applied a fix for the notifications." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    }
+    
+    else {
+        alert = [[UIAlertView alloc] initWithTitle:@"Hey" message:@"We have successfuly registered our notifications. See GitHub for more info." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    }
+    
     [alert show];
 }
 
@@ -119,7 +160,7 @@
     }
 }
 
-- (IBAction)tapedOnce:(id)sender {
+- (void)tapedOnce {
     NSLog(@"%s: I love the way on tap me.", __PRETTY_FUNCTION__);
     UIImage *screen = [ScreenshotHelper snapshot:self.view];
     SLComposeViewController *twitter = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
@@ -136,7 +177,7 @@
     [self presentViewController:twitter animated:YES completion:nil];
 }
 
-- (IBAction)tapedTwice:(id)sender {
+- (void)tapedTwice {
     NSLog(@"%s: Oh yeah, you're exciting my pixels!", __PRETTY_FUNCTION__);
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kWWDCURL]];
 }

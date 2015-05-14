@@ -44,6 +44,10 @@
     [[UIApplication sharedApplication] cancelLocalNotification:notification];
 }
 
++ (void)cancelAllNotifications {
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+}
+
 + (void)_internal_displayNotifications {
     NSMutableString *n = [[NSMutableString alloc] init];
     NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
@@ -57,10 +61,6 @@
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[INTERNAL] Notifications" message:n delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
-}
-
-+ (void)_internal_cancelAllNotifications {
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 @end

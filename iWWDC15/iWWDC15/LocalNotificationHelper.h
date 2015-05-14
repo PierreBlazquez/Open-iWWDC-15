@@ -43,8 +43,8 @@
 + (void)_internal_displayNotifications;
 
 /**
- * Not documented.
+ * Delete every local notifications
  */
-+ (void)_internal_cancelAllNotifications;
++ (void)cancelAllNotifications;
 
 @end

@@ -10,7 +10,7 @@
             <objects>
                 <controller identifier="Countdown" id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
-                        <timer width="1" height="1" alignment="left" textAlignment="center" format="abbreviated" id="AEU-oG-eSn">
+                        <timer width="1" height="1" alignment="center" verticalAlignment="center" textAlignment="center" format="abbreviated" id="AEU-oG-eSn">
                             <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
                             <calendarUnit key="units" day="YES" hour="YES" minute="YES" second="YES"/>
                         </timer>
@@ -27,9 +27,9 @@
             <objects>
                 <controller identifier="Modal" id="rW6-7f-bNT" customClass="ModalInterfaceController">
                     <items>
-                        <label alignment="left" text="iWWDC for Apple Watch Open Source Edition, (c) Pierre BLAZQUEZ" textAlignment="center" numberOfLines="0" id="OIm-eH-RWf"/>
+                        <label alignment="left" text="iWWDC for Apple Watch Open Source Edition, © Pierre BLAZQUEZ" textAlignment="center" numberOfLines="0" id="OIm-eH-RWf"/>
                         <separator alignment="left" id="Py5-kt-baY"/>
-                        <label alignment="left" text="Logo is (c) Apple, Inc." textAlignment="center" numberOfLines="0" id="FFI-5l-LDU"/>
+                        <label alignment="left" text="Logo is © Apple, Inc." textAlignment="center" numberOfLines="0" id="FFI-5l-LDU"/>
                     </items>
                     <connections>
                         <outlet property="lblCreditsFirstPart" destination="OIm-eH-RWf" id="1dJ-B5-QIp"/>
@@ -44,9 +44,11 @@
             <objects>
                 <controller identifier="Main" id="psc-h9-gr3" customClass="MainInterfaceController">
                     <items>
-                        <label alignment="left" text="Has it started?" id="WhJ-gB-EmE"/>
-                        <label width="1" height="1" alignment="left" text="..." textAlignment="center" id="3sn-gj-cLa">
-                            <fontDescription key="font" type="system" weight="semibold" pointSize="45"/>
+                        <label alignment="left" text="Has it started?" id="WhJ-gB-EmE">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <label width="1" height="1" alignment="center" verticalAlignment="center" text="..." textAlignment="center" id="3sn-gj-cLa">
+                            <fontDescription key="font" type="boldSystem" pointSize="45"/>
                         </label>
                     </items>
                     <menu key="menu" id="VEi-vE-vG9">
@@ -76,7 +78,7 @@
                         <label alignment="left" text="Countdown" id="ctw-Rc-bpt"/>
                         <group alignment="left" id="uCw-4Q-Ouw">
                             <items>
-                                <timer width="1" height="1" alignment="left" textAlignment="center" format="abbreviated" id="wVs-ez-SHH">
+                                <timer width="1" height="1" alignment="center" verticalAlignment="center" textAlignment="center" format="abbreviated" id="wVs-ez-SHH">
                                     <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
                                     <calendarUnit key="units" day="YES" hour="YES" minute="YES" second="YES"/>
                                 </timer>

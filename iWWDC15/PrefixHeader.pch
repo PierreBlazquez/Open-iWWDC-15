@@ -19,4 +19,6 @@
 #define kWWDCURL @"https://developer.apple.com/wwdc/"
 #define kNotificationsEnabled @"UserEnabledNotificationsBitch"
 
+#define kAreLocalNotificationsFixed @"AreLocalNotificationsFixed"
+
 #endif
